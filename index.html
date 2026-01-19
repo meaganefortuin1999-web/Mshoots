@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Through Meagan’s Lenses</title>
+  <meta name="description" content="Through Meagan’s Lenses — Moments Framed. Memories Treasured. Photography packages and contact." />
+  <style>
+    :root{
+      --deep:#1b0033;
+      --fuchsia:#7b1fa2;
+      --pink:#ff5fa2;
+      --accent:#10b981;
+      --card: rgba(255,255,255,0.06);
+      --muted: rgba(255,255,255,0.92);
+      --glass: rgba(255,255,255,0.04);
+      --max-width:1100px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    html,body{
+      height:100%;
+      margin:0;
+      color:var(--muted);
+      background:
+        radial-gradient(1200px 600px at 10% 10%, rgba(255,95,162,0.06), transparent),
+        linear-gradient(135deg, var(--deep) 0%, var(--fuchsia) 45%, var(--pink) 100%);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* subtle star pattern */
+    .stars{
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+      background-size: 60px 60px;
+      opacity:0.18;
+      mix-blend-mode: screen;
+    }
+
+    .container{
+      max-width:var(--max-width);
+      margin:0 auto;
+      padding:28px;
+    }
+
+    header{
+      text-align:center;
+      padding:44px 16px;
+      color:#fff;
+    }
+
+    .brand-badge{
+      display:inline-block;
+      padding:8px 14px;
+      border-radius:999px;
+      background: linear-gradient(90deg, var(--fuchsia), var(--pink));
+      font-weight:800;
+      color:#fff;
+      font-size:14px;
+    }
+
+    h1{
+      margin:12px 0 6px;
+      font-size:32px;
+      letter-spacing:0.6px;
+      font-weight:800;
+    }
+
+    p.lead{
+      margin-top:8px;
+      font-style:italic;
+      opacity:0.95;
+    }
+
+    .card{
+      background:var(--card);
+      border-radius:14px;
+      padding:20px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.25);
+      margin-bottom:22px;
+      backdrop-filter: blur(6px);
+    }
+
+    h2{
+      margin:0 0 12px 0;
+      font-size:20px;
+      color:#fff;
+    }
+
+    .grid{ display:grid; gap:14px; }
+
+    .packages{ grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+
+    .pkg{
+      background: rgba(0,0,0,0.18);
+      padding:14px;
+      border-radius:12px;
+      transition: transform .18s ease, box-shadow .18s ease;
+      border:1px solid rgba(255,255,255,0.03);
+    }
+
+    .pkg:hover{
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+    }
+
+    .pkg h3{ margin:0 0 8px 0; font-size:18px; color:#fff; }
+
+    ul{ margin:8px 0 0 18px; padding:0; color:#eaeaea; }
+
+    .tabs{
+      display:flex;
+      gap:8px;
+      margin-bottom:14px;
+      flex-wrap:wrap;
+    }
+
+    .tab-btn{
+      background:transparent;
+      border:1px solid rgba(255,255,255,0.06);
+      color:var(--muted);
+      padding:8px 12px;
+      border-radius:999px;
+      cursor:pointer;
+      font-weight:700;
+    }
+
+    .tab-btn[aria-selected="true"]{
+      background: linear-gradient(90deg, var(--fuchsia), var(--pink));
+      color:#fff;
+      border-color: transparent;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+
+    .contact-row{ display:flex; flex-direction:column; gap:12px; }
+
+    .whatsapp-btn{
+      display:inline-block;
+      background:var(--accent);
+      color:#fff;
+      padding:12px 18px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:700;
+      box-shadow:0 8px 20px rgba(16,185,129,0.18);
+      width:max-content;
+    }
+
+    footer{
+      text-align:center;
+      padding:18px 0;
+      opacity:0.9;
+      font-size:13px;
+    }
+
+    .small{ font-size:13px; opacity:0.95; }
+
+    .booking-frame{
+      width:100%;
+      height:720px;
+      border:0;
+      border-radius:12px;
+      box-shadow:0 8px 30px rgba(0,0,0,0.25);
+    }
+
+    @media(max-width:520px){
+      h1{ font-size:24px; }
+      .booking-frame{ height:640px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+
+  <div class="container">
+    <header>
+      <div class="brand-badge" aria-hidden="true">Through Meagan’s Lenses</div>
+      <h1>Moments Framed. Memories Treasured</h1>
+      <p class="lead">Meagan Fortuin — Head Photographer</p>
+    </header>
+
+    <nav class="tabs" role="tablist" aria-label="Main sections">
+      <button class="tab-btn" role="tab" aria-selected="true" aria-controls="overview" id="tab-overview">Overview</button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="booking" id="tab-booking">Booking form</button>
+    </nav>
+
+    <!-- Overview content -->
+    <main id="overview" role="tabpanel" aria-labelledby="tab-overview">
+      <section class="card" aria-labelledby="aboutTitle">
+        <h2 id="aboutTitle">About</h2>
+        <p class="small">Hi, I’m <strong>Meagan Fortuin</strong>. I specialize in capturing timeless moments through portraits, events, and special occasions. My passion is turning moments into memories you’ll treasure forever.</p>
+      </section>
+
+      <section id="packages" class="card" aria-labelledby="packagesTitle">
+        <h2 id="packagesTitle">Photography Packages</h2>
+        <div class="grid packages" role="list">
+          <article class="pkg" role="listitem" aria-labelledby="miniTitle">
+            <h3 id="miniTitle">Mini Session – R700</h3>
+            <ul>
+              <li>30 minutes</li>
+              <li>10 edited digital photos</li>
+              <li>All photos on a memory stick</li>
+            </ul>
+          </article>
+
+          <article class="pkg" role="listitem" aria-labelledby="standardTitle">
+            <h3 id="standardTitle">Standard Session – R1 300</h3>
+            <ul>
+              <li>1 hour</li>
+              <li>20 edited digital photos</li>
+              <li>Memory stick + optional print outs (R25 p/p)</li>
+            </ul>
+          </article>
+
+          <article class="pkg" role="listitem" aria-labelledby="premiumTitle">
+            <h3 id="premiumTitle">Premium Session – R1 750</h3>
+            <ul>
+              <li>2 hours</li>
+              <li>30 edited digital photos</li>
+              <li>Memory stick + 10 print outs included</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="card" aria-labelledby="eventsTitle">
+        <h2 id="eventsTitle">Special Events Packages</h2>
+        <div class="grid packages" role="list">
+          <article class="pkg" role="listitem" aria-labelledby="ev4">
+            <h3 id="ev4">4 Hours – R2 000</h3>
+            <ul>
+              <li>Up to 4 hours of event coverage</li>
+              <li>40+ professionally edited digital photos</li>
+              <li>Delivered via memory stick or online transfer</li>
+            </ul>
+          </article>
+
+          <article class="pkg" role="listitem" aria-labelledby="ev6">
+            <h3 id="ev6">6 Hours – R3 500</h3>
+            <ul>
+              <li>Up to 6 hours of event coverage</li>
+              <li>60+ professionally edited digital photos</li>
+              <li>Ideal for larger events & formal functions</li>
+            </ul>
+          </article>
+
+          <article class="pkg" role="listitem" aria-labelledby="ev8">
+            <h3 id="ev8">8+ Hours – From R5 500</h3>
+            <ul>
+              <li>8+ hours of event coverage</li>
+              <li>100+ professionally edited digital photos</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="card" aria-labelledby="contactTitle">
+        <h2 id="contactTitle">Contact</h2>
+        <div class="contact-row">
+          <div class="small">📞 <strong>069 210 6016</strong></div>
+          <div class="small">📧 <strong>Mshoots01@gmail.com</strong></div>
+
+          <a class="whatsapp-btn" href="https://wa.me/27692106016" target="_blank" rel="noopener noreferrer">💬 Chat on WhatsApp</a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Booking form content -->
+    <section id="booking" role="tabpanel" aria-labelledby="tab-booking" hidden>
+      <div class="card">
+        <h2>Booking form</h2>
+        <p class="small">Use the form below to submit a booking request. The form opens in an embedded Google Form.</p>
+
+        <!-- Embedded Google Form -->
+        <iframe
+          class="booking-frame"
+          src="https://docs.google.com/forms/d/e/1FAIpQLSdR472rwcaZyq11lJLi_oAGIPrMjYZnQ5t8qGWJdkH3XOCxuQ/viewform?usp=dialog"
+          title="Booking form for Through Meagan's Lenses"
+          aria-label="Booking form"
+        ></iframe>
+
+        <p class="small" style="margin-top:12px;">If the form does not load, open it directly: <a href="https://docs.google.com/forms/d/e/1FAIpQLSdR472rwcaZyq11lJLi_oAGIPrMjYZnQ5t8qGWJdkH3XOCxuQ/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" style="color:var(--muted);text-decoration:underline;">Open booking form</a>.</p>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Through Meagan’s Lenses | All Rights Reserved
+    </footer>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // set year
+      const yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+      // Tab elements
+      const tabOverview = document.getElementById('tab-overview');
+      const tabBooking = document.getElementById('tab-booking');
+      const overviewPanel = document.getElementById('overview');
+      const bookingPanel = document.getElementById('booking');
+
+      // Guard checks
+      if (!tabOverview || !tabBooking || !overviewPanel || !bookingPanel) {
+        console.error('Tab elements missing. Check HTML IDs.');
+        return;
+      }
+
+      // Helper to set active tab
+      function setActive(selectedBtn, panelToShow) {
+        [tabOverview, tabBooking].forEach(btn => btn.setAttribute('aria-selected', 'false'));
+        [overviewPanel, bookingPanel].forEach(p => p.hidden = true);
+
+        selectedBtn.setAttribute('aria-selected', 'true');
+        panelToShow.hidden = false;
+        selectedBtn.focus();
+      }
+
+      function showOverview() { setActive(tabOverview, overviewPanel); }
+      function showBooking()  { setActive(tabBooking, bookingPanel); }
+
+      tabOverview.addEventListener('click', showOverview);
+      tabBooking.addEventListener('click', showBooking);
+
+      // Keyboard navigation
+      [tabOverview, tabBooking].forEach((btn, idx, arr) => {
+        btn.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowRight') {
+            const next = arr[(idx + 1) % arr.length];
+            next.click();
+          } else if (e.key === 'ArrowLeft') {
+            const prev = arr[(idx - 1 + arr.length) % arr.length];
+            prev.click();
+          }
+        });
+      });
+
+      // Initialize to overview
+      showOverview();
+    });
+  </script>
+</body>
+</html>
