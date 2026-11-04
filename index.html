@@ -399,7 +399,13 @@
           }
         });
       });
+      
+function showPortfolio() {
+  setActive(tabPortfolio, portfolioPanel);
+}
 
+tabPortfolio.addEventListener('click', showPortfolio);
+      
       // Initialize to overview
       showOverview();
     });
