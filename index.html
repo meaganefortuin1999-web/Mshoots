@@ -166,7 +166,34 @@
       box-shadow:0 8px 30px rgba(0,0,0,0.25);
     }
 
-    @media(max-width:520px){
+    @media(max-width:520px){.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:15px;
+  margin-top:15px;
+}
+
+.gallery-category{
+  margin-bottom:30px;
+}
+
+.gallery-category h3{
+  color:#fff;
+  margin-bottom:12px;
+}
+
+.gallery img{
+  width:100%;
+  height:250px;
+  object-fit:cover;
+  border-radius:12px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.25);
+  transition:transform .2s ease;
+}
+
+.gallery img:hover{
+  transform:scale(1.03);
+}
       h1{ font-size:24px; }
       .booking-frame{ height:640px; }
     }
@@ -196,15 +223,36 @@
 <section class="card" aria-labelledby="portfolioTitle">
   <h2 id="portfolioTitle">Portfolio</h2>
 
-  <div class="gallery">
+  <div class="gallery-category">
+    <h3>💍 Weddings</h3>
+    <div class="gallery">
+      <img src="batch_IMG_0767.JPG" alt="Wedding Photography">
+      <img src="batch_IMG_0768.JPG" alt="Wedding Photography">
+    </div>
+  </div>
 
-    <img src="batch_IMG_0767.JPG" alt="Photography Sample">
-    <img src="batch_IMG_0768.JPG" alt="Photography Sample">
-    <img src="batch_IMG_0774.JPG" alt="Photography Sample">
-    <img src="batch_IMG_0781.JPG" alt="Photography Sample">
-    <img src="batch_IMG_0785.JPG" alt="Photography Sample">
-    <img src="batch_IMG_0793.JPG" alt="Photography Sample">
+  <div class="gallery-category">
+    <h3>🎓 Graduations</h3>
+    <div class="gallery">
+      <img src="batch_IMG_0774.JPG" alt="Graduation Photography">
+      <img src="batch_IMG_0781.JPG" alt="Graduation Photography">
+      <img src="batch_IMG_0785.JPG" alt="Matric Ball Photography">
+      <img src="batch_IMG_0793.JPG" alt="Matric Ball Photography">
+      <img src="batch_IMG_0810.JPG" alt="Church Event Photography">
+      <img src="batch_IMG_0826.JPG" alt="Church Event Photography">
+    </div>
+  </div>
 
+  <div class="gallery-category">
+    <h3>✨ Matric Balls</h3>
+    <div class="gallery">
+    </div>
+  </div>
+
+  <div class="gallery-category">
+    <h3>⛪ Church Events</h3>
+    <div class="gallery">
+    </div>
   </div>
 </section>
       
