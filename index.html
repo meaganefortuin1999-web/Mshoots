@@ -1,414 +1,234 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Through Meagan’s Lenses</title>
-  <meta name="description" content="Through Meagan’s Lenses — Moments Framed. Memories Treasured. Photography packages and contact." />
-  <style>
-    :root{
-      --deep:#1b0033;
-      --fuchsia:#7b1fa2;
-      --pink:#ff5fa2;
-      --accent:#10b981;
-      --card: rgba(255,255,255,0.06);
-      --muted: rgba(255,255,255,0.92);
-      --glass: rgba(255,255,255,0.04);
-      --max-width:1100px;
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    }
-
-    html,body{
-      height:100%;
-      margin:0;
-      color:var(--muted);
-      background:
-        radial-gradient(1200px 600px at 10% 10%, rgba(255,95,162,0.06), transparent),
-        linear-gradient(135deg, var(--deep) 0%, var(--fuchsia) 45%, var(--pink) 100%);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-    }
-
-    /* subtle star pattern */
-    .stars{
-      position:fixed;
-      inset:0;
-      pointer-events:none;
-      background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
-      background-size: 60px 60px;
-      opacity:0.18;
-      mix-blend-mode: screen;
-    }
-
-    .container{
-      max-width:var(--max-width);
-      margin:0 auto;
-      padding:28px;
-    }
-
-    header{
-      text-align:center;
-      padding:44px 16px;
-      color:#fff;
-    }
-
-    .brand-badge{
-      display:inline-block;
-      padding:8px 14px;
-      border-radius:999px;
-      background: linear-gradient(90deg, var(--fuchsia), var(--pink));
-      font-weight:800;
-      color:#fff;
-      font-size:14px;
-    }
-
-    h1{
-      margin:12px 0 6px;
-      font-size:32px;
-      letter-spacing:0.6px;
-      font-weight:800;
-    }
-
-    p.lead{
-      margin-top:8px;
-      font-style:italic;
-      opacity:0.95;
-    }
-
-    .card{
-      background:var(--card);
-      border-radius:14px;
-      padding:20px;
-      box-shadow:0 10px 30px rgba(0,0,0,0.25);
-      margin-bottom:22px;
-      backdrop-filter: blur(6px);
-    }
-
-    h2{
-      margin:0 0 12px 0;
-      font-size:20px;
-      color:#fff;
-    }
-
-    .grid{ display:grid; gap:14px; }
-
-    .packages{ grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
-
-    .pkg{
-      background: rgba(0,0,0,0.18);
-      padding:14px;
-      border-radius:12px;
-      transition: transform .18s ease, box-shadow .18s ease;
-      border:1px solid rgba(255,255,255,0.03);
-    }
-
-    .pkg:hover{
-      transform: translateY(-6px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
-    }
-
-    .pkg h3{ margin:0 0 8px 0; font-size:18px; color:#fff; }
-
-    ul{ margin:8px 0 0 18px; padding:0; color:#eaeaea; }
-
-    .tabs{
-      display:flex;
-      gap:8px;
-      margin-bottom:14px;
-      flex-wrap:wrap;
-    }
-
-    .tab-btn{
-      background:transparent;
-      border:1px solid rgba(255,255,255,0.06);
-      color:var(--muted);
-      padding:8px 12px;
-      border-radius:999px;
-      cursor:pointer;
-      font-weight:700;
-    }
-
-    .tab-btn[aria-selected="true"]{
-      background: linear-gradient(90deg, var(--fuchsia), var(--pink));
-      color:#fff;
-      border-color: transparent;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-    }
-
-    .contact-row{ display:flex; flex-direction:column; gap:12px; }
-
-    .whatsapp-btn{
-      display:inline-block;
-      background:var(--accent);
-      color:#fff;
-      padding:12px 18px;
-      border-radius:999px;
-      text-decoration:none;
-      font-weight:700;
-      box-shadow:0 8px 20px rgba(16,185,129,0.18);
-      width:max-content;
-    }
-
-    footer{
-      text-align:center;
-      padding:18px 0;
-      opacity:0.9;
-      font-size:13px;
-    }
-
-    .small{ font-size:13px; opacity:0.95; }
-
-    .booking-frame{
-      width:100%;
-      height:720px;
-      border:0;
-      border-radius:12px;
-      box-shadow:0 8px 30px rgba(0,0,0,0.25);
-    }
-
-    @media(max-width:520px){.gallery{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:15px;
-  margin-top:15px;
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Through Meagan's Lenses | Photography</title>
+<meta name="description" content="Through Meagan's Lenses — Moments Framed. Memories Treasured. Photography packages and galleries.">
+<style>
+:root {
+  --deep: #1b0033;
+  --fuchsia: #7b1fa2;
+  --pink: #ff5fa2;
+  --accent: #10b981;
+  --text: #fff;
+  --muted: rgba(255,255,255,.86);
+  --card: rgba(255,255,255,.075);
+  --line: rgba(255,255,255,.15);
+  --max-width: 1100px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; min-height: 100vh; color: var(--text);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  background:
+    radial-gradient(1000px 550px at 10% 5%, rgba(255,95,162,.13), transparent),
+    linear-gradient(135deg, var(--deep) 0%, var(--fuchsia) 55%, var(--pink) 120%);
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+.container { width: min(100% - 36px, var(--max-width)); margin: 0 auto; }
+.site-header { text-align: center; padding: 42px 12px 28px; }
+.brand-badge {
+  display: inline-block; padding: 8px 15px; border-radius: 999px;
+  background: linear-gradient(90deg,var(--fuchsia),var(--pink));
+  font-size: 13px; font-weight: 800; letter-spacing: .3px;
+}
+h1 { margin: 14px 0 7px; font-size: clamp(27px,5vw,42px); line-height: 1.12; }
+.tagline { margin: 0; font-style: italic; color: var(--muted); }
+.main-nav {
+  display: flex; justify-content: center; align-items: center; flex-wrap: wrap;
+  gap: 9px; margin: 12px auto 28px;
+}
+.main-nav a, .button-link, button {
+  border: 1px solid var(--line); border-radius: 999px; padding: 10px 16px;
+  color: white; background: rgba(255,255,255,.07); text-decoration: none;
+  font: inherit; font-weight: 700; cursor: pointer; transition: .2s ease;
+}
+.main-nav a:hover, .button-link:hover, button:hover {
+  background: linear-gradient(90deg,var(--fuchsia),var(--pink)); transform: translateY(-1px);
+}
+.card {
+  background: var(--card); border: 1px solid rgba(255,255,255,.08);
+  border-radius: 18px; padding: clamp(18px,3vw,26px); margin-bottom: 22px;
+  box-shadow: 0 12px 32px rgba(0,0,0,.18); backdrop-filter: blur(7px);
+}
+h2 { margin: 0 0 14px; font-size: 23px; }
+h3 { margin: 0 0 9px; }
+.small { font-size: 14px; line-height: 1.7; color: var(--muted); }
+.category-grid, .package-grid {
+  display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 17px;
+}
+.category-card {
+  display: block; overflow: hidden; text-decoration: none; border-radius: 15px;
+  background: rgba(0,0,0,.2); border: 1px solid var(--line); transition: .2s ease;
+}
+.category-card:hover { transform: translateY(-4px); box-shadow: 0 12px 25px rgba(0,0,0,.25); }
+.category-card img { width: 100%; height: 220px; object-fit: cover; display: block; }
+.category-card .category-info { padding: 15px; }
+.category-info p { margin: 5px 0 0; color: var(--muted); font-size: 13px; }
+.package {
+  background: rgba(0,0,0,.18); border-radius: 13px; padding: 17px;
+  border: 1px solid rgba(255,255,255,.08);
+}
+ul { margin: 8px 0 0 19px; padding: 0; color: var(--muted); line-height: 1.8; }
+.contact-row { display: flex; flex-direction: column; gap: 12px; }
+.whatsapp-btn {
+  display: inline-flex; width: fit-content; align-items: center; gap: 8px;
+  background: var(--accent); color: white; border-radius: 999px; padding: 12px 18px;
+  text-decoration: none; font-weight: 800;
+}
+.gallery-heading { text-align: center; margin: 8px 0 24px; }
+.gallery-heading p { color: var(--muted); }
+.photo-grid {
+  display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 14px;
+}
+.photo-tile {
+  padding: 0; border: 0; border-radius: 13px; overflow: hidden; background: rgba(0,0,0,.2);
+  aspect-ratio: 4 / 3; cursor: zoom-in; box-shadow: 0 8px 22px rgba(0,0,0,.23);
+}
+.photo-tile img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .25s ease; }
+.photo-tile:hover img { transform: scale(1.045); }
+.empty-gallery {
+  text-align: center; padding: 42px 20px; border: 1px dashed var(--line);
+  border-radius: 14px; color: var(--muted);
+}
+.booking-frame {
+  width: 100%; height: 760px; border: 0; border-radius: 12px;
+  background: white;
+}
+footer { text-align: center; padding: 22px 0 30px; color: var(--muted); font-size: 13px; }
+.lightbox {
+  display: none; position: fixed; inset: 0; z-index: 1000; padding: 24px;
+  background: rgba(10,0,18,.94); align-items: center; justify-content: center;
+}
+.lightbox.open { display: flex; }
+.lightbox img { max-width: min(88vw,1100px); max-height: 82vh; object-fit: contain; border-radius: 8px; }
+.lightbox button {
+  position: absolute; border: 1px solid rgba(255,255,255,.25);
+  background: rgba(255,255,255,.12); width: 46px; height: 46px; padding: 0;
+  display: grid; place-items: center; font-size: 24px;
+}
+.lightbox .close { top: 18px; right: 18px; }
+.lightbox .prev { left: 18px; top: 50%; transform: translateY(-50%); }
+.lightbox .next { right: 18px; top: 50%; transform: translateY(-50%); }
+.lightbox .counter {
+  position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%);
+  color: white; font-size: 13px; background: rgba(0,0,0,.45); padding: 7px 12px; border-radius: 999px;
+}
+@media (max-width: 700px) {
+  .photo-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
+  .category-grid, .package-grid { grid-template-columns: 1fr; }
+  .category-card img { height: 210px; }
+  .booking-frame { height: 680px; }
+}
+@media (max-width: 390px) {
+  .photo-grid { grid-template-columns: 1fr 1fr; }
+  .photo-tile { aspect-ratio: 1 / 1; }
 }
 
-.gallery-category{
-  margin-bottom:30px;
-}
-
-.gallery-category h3{
-  color:#fff;
-  margin-bottom:12px;
-}
-
-.gallery img{
-  width:100%;
-  height:250px;
-  object-fit:cover;
-  border-radius:12px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.25);
-  transition:transform .2s ease;
-}
-
-.gallery img:hover{
-  transform:scale(1.03);
-}
-      h1{ font-size:24px; }
-      .booking-frame{ height:640px; }
-    }
-  </style>
+/* Single-file navigation */
+.gallery-page, #booking { display:none; }
+.gallery-page.active, #booking.active { display:block; }
+#home.active { display:block; }
+.nav-link { border:1px solid var(--line); border-radius:999px; padding:10px 16px; color:white; background:rgba(255,255,255,.07); text-decoration:none; font:inherit; font-weight:700; cursor:pointer; }
+.nav-link:hover { background:linear-gradient(90deg,var(--fuchsia),var(--pink)); }
+</style>
 </head>
 <body>
-  <div class="stars" aria-hidden="true"></div>
-
-  <div class="container">
-    <header>
-      <div class="brand-badge" aria-hidden="true">Through Meagan’s Lenses</div>
-      <h1>Moments Framed. Memories Treasured</h1>
-      <p class="lead">Meagan Fortuin — Head Photographer</p>
-    </header>
-
-    <nav class="tabs" role="tablist" aria-label="Main sections">
-      <button class="tab-btn" role="tab" aria-selected="true" aria-controls="overview" id="tab-overview">Overview</button>
-      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="booking" id="tab-booking">Booking form</button>
-    </nav>
-
-    <!-- Overview content -->
-    <main id="overview" role="tabpanel" aria-labelledby="tab-overview">
-      <section class="card" aria-labelledby="aboutTitle">
-        <h2 id="aboutTitle">About</h2>
-        <p class="small">Hi, I’m <strong>Meagan Fortuin</strong>. I specialize in capturing timeless moments through portraits, events, and special occasions. My passion is turning moments into memories you’ll treasure forever.</p>
-      </section>
-<section class="card" aria-labelledby="portfolioTitle">
-  <h2 id="portfolioTitle">Portfolio</h2>
-
-  <div class="gallery-category">
-    <h3>💍 Weddings</h3>
-    <div class="gallery">
-      <img src="batch_IMG_0767.JPG" alt="Wedding Photography">
-      <img src="batch_IMG_0768.JPG" alt="Wedding Photography">
-    </div>
-  </div>
-
-  <div class="gallery-category">
-    <h3>🎓 Graduations</h3>
-    <div class="gallery">
-      <img src="batch_IMG_0774.JPG" alt="Graduation Photography">
-      <img src="batch_IMG_0781.JPG" alt="Graduation Photography">
-      <img src="batch_IMG_0785.JPG" alt="Matric Ball Photography">
-      <img src="batch_IMG_0793.JPG" alt="Matric Ball Photography">
-      <img src="batch_IMG_0810.JPG" alt="Church Event Photography">
-      <img src="batch_IMG_0826.JPG" alt="Church Event Photography">
-    </div>
-  </div>
-
-  <div class="gallery-category">
-    <h3>✨ Matric Balls</h3>
-    <div class="gallery">
-    </div>
-  </div>
-
-  <div class="gallery-category">
-    <h3>⛪ Church Events</h3>
-    <div class="gallery">
-    </div>
-  </div>
+<div class="container">
+<header class="site-header">
+<span class="brand-badge">Through Meagan's Lenses</span>
+<h1>Moments Framed. Memories Treasured.</h1>
+<p class="tagline">Meagan Fortuin — Head Photographer</p>
+</header>
+<nav class="main-nav" aria-label="Main navigation">
+<a class="nav-link" href="#home" data-page="home">Home</a>
+<a class="nav-link" href="#portfolio" data-page="home" data-scroll="portfolio">Portfolio</a>
+<a class="nav-link" href="#packages" data-page="home" data-scroll="packages">Packages</a>
+<a class="nav-link" href="#contact" data-page="home" data-scroll="contact">Contact</a>
+<a class="nav-link" href="#booking" data-page="booking">Book a shoot</a>
+</nav>
+<main>
+<section id="home" class="active">
+<section class="card" id="about"><h2>Behind the Lens</h2><p class="small">Hi, I'm <strong>Meagan Fortuin</strong>. I specialize in capturing timeless moments through portraits, events and special occasions. My passion is turning moments into memories you'll treasure forever.</p></section>
+<section class="card" id="portfolio"><h2>Explore the Galleries</h2><p class="small">Choose a collection to explore the moments captured through my lens.</p>
+<div class="category-grid">
+<a class="category-card" href="#weddings" data-page="weddings"><img src="images/weddings/batch_IMG_0767.JPG" alt="Wedding photography"><div class="category-info"><h3>💍 Weddings</h3><p>Love stories, beautifully remembered.</p></div></a>
+<a class="category-card" href="#graduations" data-page="graduations"><img src="images/graduations/batch_IMG_0774.JPG" alt="Graduation photography"><div class="category-info"><h3>🎓 Graduations</h3><p>Celebrating hard work and new beginnings.</p></div></a>
+<a class="category-card" href="#matric-balls" data-page="matric-balls"><div class="category-info"><h3>✨ Matric Balls</h3><p>All the sparkle, all the memories.</p></div></a>
+<a class="category-card" href="#church-events" data-page="church-events"><div class="category-info"><h3>⛪ Church Events</h3><p>Meaningful moments and special gatherings.</p></div></a>
+</div></section>
+<section class="card" id="packages"><h2>Photography Packages</h2><div class="package-grid">
+<article class="package"><h3>Mini Session – R700</h3><ul><li>30 minutes</li><li>10 edited digital photos</li><li>All photos on a memory stick</li></ul></article>
+<article class="package"><h3>Standard Session – R1 300</h3><ul><li>1 hour</li><li>20 edited digital photos</li><li>Memory stick + optional print outs (R25 per print)</li></ul></article>
+<article class="package"><h3>Premium Session – R1 750</h3><ul><li>2 hours</li><li>30 edited digital photos</li><li>Memory stick + 10 print outs included</li></ul></article>
+</div></section>
+<section class="card"><h2>Special Events Packages</h2><div class="package-grid">
+<article class="package"><h3>4 Hours – R2 000</h3><ul><li>Up to 4 hours of event coverage</li><li>40+ professionally edited digital photos</li><li>Memory stick or online transfer</li></ul></article>
+<article class="package"><h3>6 Hours – R3 500</h3><ul><li>Up to 6 hours of event coverage</li><li>60+ professionally edited digital photos</li><li>Ideal for larger events and formal functions</li></ul></article>
+<article class="package"><h3>8+ Hours – From R5 500</h3><ul><li>8+ hours of event coverage</li><li>100+ professionally edited digital photos</li></ul></article>
+</div></section>
+<section class="card" id="contact"><h2>Let's Make Memories</h2><div class="contact-row"><div class="small">📞 <strong>069 210 6016</strong></div><div class="small">📧 <strong><a href="mailto:Mshoots01@gmail.com">Mshoots01@gmail.com</a></strong></div><a class="whatsapp-btn" href="https://wa.me/27692106016" target="_blank" rel="noopener noreferrer">💬 Chat on WhatsApp</a><p class="small">Ready to book? <a href="#booking" data-page="booking">Send a booking request here.</a></p></div></section>
 </section>
-      
-      <section id="packages" class="card" aria-labelledby="packagesTitle">
-        <h2 id="packagesTitle">Photography Packages</h2>
-        <div class="grid packages" role="list">
-          <article class="pkg" role="listitem" aria-labelledby="miniTitle">
-            <h3 id="miniTitle">Mini Session – R700</h3>
-            <ul>
-              <li>30 minutes</li>
-              <li>10 edited digital photos</li>
-              <li>All photos on a memory stick</li>
-            </ul>
-          </article>
-
-          <article class="pkg" role="listitem" aria-labelledby="standardTitle">
-            <h3 id="standardTitle">Standard Session – R1 300</h3>
-            <ul>
-              <li>1 hour</li>
-              <li>20 edited digital photos</li>
-              <li>Memory stick + optional print outs (R25 p/p)</li>
-            </ul>
-          </article>
-
-          <article class="pkg" role="listitem" aria-labelledby="premiumTitle">
-            <h3 id="premiumTitle">Premium Session – R1 750</h3>
-            <ul>
-              <li>2 hours</li>
-              <li>30 edited digital photos</li>
-              <li>Memory stick + 10 print outs included</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section class="card" aria-labelledby="eventsTitle">
-        <h2 id="eventsTitle">Special Events Packages</h2>
-        <div class="grid packages" role="list">
-          <article class="pkg" role="listitem" aria-labelledby="ev4">
-            <h3 id="ev4">4 Hours – R2 000</h3>
-            <ul>
-              <li>Up to 4 hours of event coverage</li>
-              <li>40+ professionally edited digital photos</li>
-              <li>Delivered via memory stick or online transfer</li>
-            </ul>
-          </article>
-
-          <article class="pkg" role="listitem" aria-labelledby="ev6">
-            <h3 id="ev6">6 Hours – R3 500</h3>
-            <ul>
-              <li>Up to 6 hours of event coverage</li>
-              <li>60+ professionally edited digital photos</li>
-              <li>Ideal for larger events & formal functions</li>
-            </ul>
-          </article>
-
-          <article class="pkg" role="listitem" aria-labelledby="ev8">
-            <h3 id="ev8">8+ Hours – From R5 500</h3>
-            <ul>
-              <li>8+ hours of event coverage</li>
-              <li>100+ professionally edited digital photos</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section class="card" aria-labelledby="contactTitle">
-        <h2 id="contactTitle">Contact</h2>
-        <div class="contact-row">
-          <div class="small">📞 <strong>069 210 6016</strong></div>
-          <div class="small">📧 <strong>Mshoots01@gmail.com</strong></div>
-
-          <a class="whatsapp-btn" href="https://wa.me/27692106016" target="_blank" rel="noopener noreferrer">💬 Chat on WhatsApp</a>
-        </div>
-      </section>
-    </main>
-
-    <!-- Booking form content -->
-    <section id="booking" role="tabpanel" aria-labelledby="tab-booking" hidden>
-      <div class="card">
-        <h2>Booking form</h2>
-        <p class="small">Use the form below to submit a booking request. The form opens in an embedded Google Form.</p>
-
-        <!-- Embedded Google Form -->
-        <iframe
-          class="booking-frame"
-          src="https://docs.google.com/forms/d/e/1FAIpQLSdR472rwcaZyq11lJLi_oAGIPrMjYZnQ5t8qGWJdkH3XOCxuQ/viewform?usp=dialog"
-          title="Booking form for Through Meagan's Lenses"
-          aria-label="Booking form"
-        ></iframe>
-
-        <p class="small" style="margin-top:12px;">If the form does not load, open it directly: <a href="https://docs.google.com/forms/d/e/1FAIpQLSdR472rwcaZyq11lJLi_oAGIPrMjYZnQ5t8qGWJdkH3XOCxuQ/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" style="color:var(--muted);text-decoration:underline;">Open booking form</a>.</p>
-      </div>
-    </section>
-
-    <footer>
-      © <span id="year"></span> Through Meagan’s Lenses | All Rights Reserved
-    </footer>
-  </div>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // set year
-      const yearEl = document.getElementById('year');
-      if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-      // Tab elements
-      const tabOverview = document.getElementById('tab-overview');
-      const tabBooking = document.getElementById('tab-booking');
-      const overviewPanel = document.getElementById('overview');
-      const bookingPanel = document.getElementById('booking');
-
-      // Guard checks
-      if (!tabOverview || !tabBooking || !overviewPanel || !bookingPanel) {
-        console.error('Tab elements missing. Check HTML IDs.');
-        return;
-      }
-
-      // Helper to set active tab
-      function setActive(selectedBtn, panelToShow) {
-        [tabOverview, tabBooking].forEach(btn => btn.setAttribute('aria-selected', 'false'));
-        [overviewPanel, bookingPanel].forEach(p => p.hidden = true);
-
-        selectedBtn.setAttribute('aria-selected', 'true');
-        panelToShow.hidden = false;
-        selectedBtn.focus();
-      }
-
-      function showOverview() { setActive(tabOverview, overviewPanel); }
-      function showBooking()  { setActive(tabBooking, bookingPanel); }
-
-      tabOverview.addEventListener('click', showOverview);
-      tabBooking.addEventListener('click', showBooking);
-
-      // Keyboard navigation
-      [tabOverview, tabBooking].forEach((btn, idx, arr) => {
-        btn.addEventListener('keydown', (e) => {
-          if (e.key === 'ArrowRight') {
-            const next = arr[(idx + 1) % arr.length];
-            next.click();
-          } else if (e.key === 'ArrowLeft') {
-            const prev = arr[(idx - 1 + arr.length) % arr.length];
-            prev.click();
-          }
-        });
-      });
-      
-function showPortfolio() {
-  setActive(tabPortfolio, portfolioPanel);
-}
-
-tabPortfolio.addEventListener('click', showPortfolio);
-      
-      // Initialize to overview
-      showOverview();
-    });
-  </script>
+<section id="weddings" class="gallery-page">
+<div class="card"><div class="gallery-heading"><h2>💍 Weddings Gallery</h2><p>Love stories, beautifully remembered.</p></div>
+<div class="photo-grid"><button class="photo-tile" type="button"><img src="images/weddings/batch_IMG_0767.JPG" alt="Weddings photography 1" loading="lazy"></button>
+<button class="photo-tile" type="button"><img src="images/weddings/batch_IMG_0768.JPG" alt="Weddings photography 2" loading="lazy"></button></div><div class="main-nav"><a class="nav-link" href="#home" data-page="home" data-scroll="portfolio">← Back to galleries</a><a class="nav-link" href="#booking" data-page="booking">Book a shoot</a><a class="nav-link" href="https://wa.me/27692106016" target="_blank" rel="noopener noreferrer">WhatsApp</a></div></div></section>
+<section id="graduations" class="gallery-page">
+<div class="card"><div class="gallery-heading"><h2>🎓 Graduations Gallery</h2><p>Celebrating hard work and new beginnings.</p></div>
+<div class="photo-grid"><button class="photo-tile" type="button"><img src="images/graduations/batch_IMG_0774.JPG" alt="Graduations photography 1" loading="lazy"></button>
+<button class="photo-tile" type="button"><img src="images/graduations/batch_IMG_0781.JPG" alt="Graduations photography 2" loading="lazy"></button>
+<button class="photo-tile" type="button"><img src="images/graduations/batch_IMG_0785.JPG" alt="Graduations photography 3" loading="lazy"></button>
+<button class="photo-tile" type="button"><img src="images/graduations/batch_IMG_0793.JPG" alt="Graduations photography 4" loading="lazy"></button>
+<button class="photo-tile" type="button"><img src="images/graduations/batch_IMG_0810.JPG" alt="Graduations photography 5" loading="lazy"></button>
+<button class="photo-tile" type="button"><img src="images/graduations/batch_IMG_0826.JPG" alt="Graduations photography 6" loading="lazy"></button></div><div class="main-nav"><a class="nav-link" href="#home" data-page="home" data-scroll="portfolio">← Back to galleries</a><a class="nav-link" href="#booking" data-page="booking">Book a shoot</a><a class="nav-link" href="https://wa.me/27692106016" target="_blank" rel="noopener noreferrer">WhatsApp</a></div></div></section>
+<section id="matric-balls" class="gallery-page">
+<div class="card"><div class="gallery-heading"><h2>✨ Matric Balls Gallery</h2><p>All the sparkle, all the memories.</p></div>
+<div class="empty-gallery"><h3>More memories coming soon</h3><p>New photographs will be added here. Please check back soon!</p></div><div class="main-nav"><a class="nav-link" href="#home" data-page="home" data-scroll="portfolio">← Back to galleries</a><a class="nav-link" href="#booking" data-page="booking">Book a shoot</a><a class="nav-link" href="https://wa.me/27692106016" target="_blank" rel="noopener noreferrer">WhatsApp</a></div></div></section>
+<section id="church-events" class="gallery-page">
+<div class="card"><div class="gallery-heading"><h2>⛪ Church Events Gallery</h2><p>Meaningful moments and special gatherings.</p></div>
+<div class="empty-gallery"><h3>More memories coming soon</h3><p>New photographs will be added here. Please check back soon!</p></div><div class="main-nav"><a class="nav-link" href="#home" data-page="home" data-scroll="portfolio">← Back to galleries</a><a class="nav-link" href="#booking" data-page="booking">Book a shoot</a><a class="nav-link" href="https://wa.me/27692106016" target="_blank" rel="noopener noreferrer">WhatsApp</a></div></div></section>
+<section id="booking" class="card"><h2>Let's Plan Your Shoot</h2><p class="small">Complete the form below to submit a booking request. If it does not load, use the link underneath.</p>
+<iframe class="booking-frame" src="https://docs.google.com/forms/d/e/1FAIpQLSdR472rwcaZyq11lJLi_oAGIPrMjYZnQ5t8qGWJdkH3XOCxuQ/viewform?usp=dialog" title="Booking form for Through Meagan's Lenses" loading="lazy"></iframe>
+<p class="small"><a href="https://docs.google.com/forms/d/e/1FAIpQLSdR472rwcaZyq11lJLi_oAGIPrMjYZnQ5t8qGWJdkH3XOCxuQ/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">Open booking form in a new tab</a></p><a class="nav-link" href="#home" data-page="home">← Back to Home</a></section>
+</main>
+<footer>© <span id="year"></span> Through Meagan's Lenses | All Rights Reserved</footer>
+</div>
+<div class="lightbox" aria-hidden="true" role="dialog" aria-label="Photo viewer">
+<button class="close" type="button" aria-label="Close photo viewer">×</button><button class="prev" type="button" aria-label="Previous photo">‹</button><img class="lightbox-image" src="" alt=""><button class="next" type="button" aria-label="Next photo">›</button><div class="counter"></div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const pages = ['home','weddings','graduations','matric-balls','church-events','booking'];
+  function showPage(id, scrollTarget) {
+    pages.forEach(page => { const el=document.getElementById(page); if(el) el.classList.toggle('active', page===id); });
+    if(scrollTarget) { setTimeout(()=>document.getElementById(scrollTarget)?.scrollIntoView({behavior:'smooth'}), 30); }
+    else window.scrollTo({top:0,behavior:'smooth'});
+    closeLightbox();
+  }
+  document.querySelectorAll('[data-page]').forEach(link => link.addEventListener('click', event => {
+    const page=link.dataset.page;
+    if(!page) return;
+    event.preventDefault();
+    showPage(page, link.dataset.scroll);
+    history.replaceState(null,'',link.getAttribute('href'));
+  }));
+  const lightbox=document.querySelector('.lightbox'), lightboxImage=lightbox.querySelector('.lightbox-image'), counter=lightbox.querySelector('.counter');
+  let tiles=[], currentIndex=0;
+  function activeTiles(){ const active=document.querySelector('.gallery-page.active'); return active ? Array.from(active.querySelectorAll('.photo-tile')) : []; }
+  function showImage(index){ tiles=activeTiles(); if(!tiles.length) return; currentIndex=(index+tiles.length)%tiles.length; const img=tiles[currentIndex].querySelector('img'); lightboxImage.src=img.src; lightboxImage.alt=img.alt; counter.textContent=`${currentIndex+1} / ${tiles.length}`; lightbox.classList.add('open'); lightbox.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
+  function closeLightbox(){ if(!lightbox) return; lightbox.classList.remove('open'); lightbox.setAttribute('aria-hidden','true'); lightboxImage.src=''; document.body.style.overflow=''; }
+  document.querySelectorAll('.photo-tile').forEach(tile=>tile.addEventListener('click',()=>{tiles=activeTiles();showImage(tiles.indexOf(tile));}));
+  lightbox.querySelector('.close').addEventListener('click',closeLightbox);
+  lightbox.querySelector('.prev').addEventListener('click',()=>showImage(currentIndex-1));
+  lightbox.querySelector('.next').addEventListener('click',()=>showImage(currentIndex+1));
+  lightbox.addEventListener('click',e=>{if(e.target===lightbox)closeLightbox();});
+  document.addEventListener('keydown',e=>{if(!lightbox.classList.contains('open'))return;if(e.key==='Escape')closeLightbox();if(e.key==='ArrowLeft')showImage(currentIndex-1);if(e.key==='ArrowRight')showImage(currentIndex+1);});
+  const initial=location.hash.replace('#',''); if(pages.includes(initial) && initial!=='home') showPage(initial);
+});
+</script>
 </body>
 </html>
